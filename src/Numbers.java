@@ -8,22 +8,19 @@ import java.util.Random;
  */
 public class Numbers {
     public void writeNumbers() {
-            File file = new File("D:/myprogramm/test.txt");
-           // file.mkdirs();
-        /*String nameDir = "/java/proglang/newdir";
-        File a = new File(nameDir);
+    /*    File folder= new File("D:\\first");
+        folder.mkdir();*/
+        File myPath = new File("/tmp/a/b");
 
-        // Создание на диске папки и всех вышестоящих каталогов
-        a.mkdirs();*/
+        myPath.mkdirs();
 
-        List<Integer> list = new ArrayList<>();
-        Random random = new Random();
         try {
-            OutputStream output = new FileOutputStream(file);
 
+            OutputStream output = new FileOutputStream(myPath);
             for (int i = 0; i < 10000000; i++) {
-                list.add(random.nextInt());
-                output.write(list.get(i));
+              //  Random random = new Random();
+
+                output.write(5);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
